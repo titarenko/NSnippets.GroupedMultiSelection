@@ -52,7 +52,6 @@
     <Compile Include="Infrastructure\LabelForExtensions.cs" />
     <Compile Include="Infrastructure\ExtendedBinder.cs" />
     <Compile Include="Infrastructure\MultiSelectionModelBinder.cs" />
-    <Compile Include="Infrastructure\SafeExtensions.cs" />
     <Compile Include="Infrastructure\MultiDropDownListForExtensions.cs" />
     <Compile Include="Models\MultiDropDownForViewModel.cs" />
     <Compile Include="Models\MultiSelection.cs" />
