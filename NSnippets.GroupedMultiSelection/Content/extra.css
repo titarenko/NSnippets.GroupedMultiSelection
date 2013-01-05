@@ -1,0 +1,21 @@
+﻿.multi-dropdown > .btn {
+    text-align: left;
+    width: 300px;
+}
+
+.multi-dropdown > .dropdown-menu {
+    width: 300px;
+    padding-left: 4px;
+}
+
+.multi-dropdown > .dropdown-menu > li > label {
+    width: 280px;
+}
+
+.multi-dropdown > .dropdown-menu > li > input {
+    margin-top: -2px;
+}
+
+.multi-dropdown {
+    display: inline;
+}

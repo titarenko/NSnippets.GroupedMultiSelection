@@ -1,0 +1,27 @@
+﻿@model ViewModel
+           
+<h2>Grouped Multi Selection Demo</h2>
+
+<h3>Previous Selection</h3>
+<dl>
+    <dt>Ints</dt>
+    <dd>@string.Join(", ", Model.Ints.Selected)</dd>
+    <dt>Strings</dt>
+    <dd>@string.Join(", ", Model.Strings.Selected)</dd>
+</dl>
+
+<h3>Current Selection</h3>
+@using (Html.BeginForm())
+{
+    <div class="row form-inline">
+        <div class="span6">
+            @Html.LabelFor(x => x.Ints)
+            @Html.MultiDropDownListFor(x => x.Ints)
+        </div>
+        <div class="span6">
+            @Html.LabelFor(x => x.Strings)
+            @Html.MultiDropDownListFor(x => x.Strings)
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary pull-right" value="Submit"/>
+}

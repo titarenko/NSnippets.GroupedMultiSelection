@@ -1,0 +1,19 @@
+﻿@model MultiDropDownForViewModel
+
+<div class="dropdown multi-dropdown form-inline">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <span class="title">@(Model.List.Any(x => x.Selected) ? string.Join(", ", Model.List.Where(x => x.Selected).Select(x => x.Text)) : "N/A")</span>
+        <b class="caret pull-right"></b>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        @for (var index = 0; index < Model.List.Count(); index++)
+        {
+            var item = Model.List.Skip(index).First();
+            var id = string.Format("{0}_{1}", Model.Id, index);
+            <li>
+                <input type="checkbox" id="@id" name="@Model.Name" value="@item.Value" @if (item.Selected) { @Html.Raw("checked") }/>
+                <label for="@id">@item.Text</label>
+            </li>
+        }
+    </ul>
+</div>
