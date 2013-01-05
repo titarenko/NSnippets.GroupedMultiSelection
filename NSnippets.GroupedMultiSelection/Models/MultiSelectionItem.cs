@@ -12,7 +12,7 @@ namespace NSnippets.GroupedMultiSelection.Models
         private readonly IList<T> values;
 
         public MultiSelectionItem(string group)
-            : this(group, true, group.Split(Separator[0]).Select(x => (T)Convert.ChangeType(x, typeof(T))).ToArray())
+            : this(group, true, group.Split(Separator[0]).Select(Convert).ToArray())
         {
         }
 
@@ -30,5 +30,12 @@ namespace NSnippets.GroupedMultiSelection.Models
         }
 
         public IList<T> Values { get { return values; } }
+
+        private static T Convert(string x)
+        {
+            return typeof (Enum).IsAssignableFrom(typeof (T))
+                       ? (T) Enum.Parse(typeof (T), x, true)
+                       : (T) System.Convert.ChangeType(x, typeof (T));
+        }
     }
 }

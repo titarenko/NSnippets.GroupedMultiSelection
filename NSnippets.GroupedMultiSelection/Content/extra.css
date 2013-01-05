@@ -19,3 +19,7 @@
 .multi-dropdown {
     display: inline;
 }
+
+input[type="submit"] {
+    margin-top: 10px;
+}

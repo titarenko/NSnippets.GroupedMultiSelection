@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using NSnippets.GroupedMultiSelection.Models;
 
 namespace NSnippets.GroupedMultiSelection.Controllers
@@ -17,7 +18,12 @@ namespace NSnippets.GroupedMultiSelection.Controllers
                 Strings = new MultiSelection<string>(
                     viewModel.Strings.Selected,
                     new MultiSelectionItem<string>("Just A", "A"),
-                    new MultiSelectionItem<string>("Z and Y", "Z", "Y"))
+                    new MultiSelectionItem<string>("Z and Y", "Z", "Y")),
+                Days = new MultiSelection<DayOfWeek>(
+                    viewModel.Days.Selected,
+                    new MultiSelectionItem<DayOfWeek>("Monday and Friday", DayOfWeek.Monday, DayOfWeek.Friday),
+                    new MultiSelectionItem<DayOfWeek>("Sunday", DayOfWeek.Sunday),
+                    new MultiSelectionItem<DayOfWeek>("Thursday", DayOfWeek.Thursday))
             });
         }
     }

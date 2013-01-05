@@ -1,4 +1,6 @@
-﻿namespace NSnippets.GroupedMultiSelection.Models
+﻿using System;
+
+namespace NSnippets.GroupedMultiSelection.Models
 {
     public class ViewModel
     {
@@ -6,10 +8,13 @@
 
         public MultiSelection<string> Strings { get; set; }
 
+        public MultiSelection<DayOfWeek> Days { get; set; }
+
         public ViewModel()
         {
             Ints = new MultiSelection<int>();
             Strings = new MultiSelection<string>();
+            Days = new MultiSelection<DayOfWeek>();
         }
     }
 }
