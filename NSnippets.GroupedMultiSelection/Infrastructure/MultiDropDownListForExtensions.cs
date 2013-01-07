@@ -8,7 +8,10 @@ namespace NSnippets.GroupedMultiSelection.Infrastructure
 {
     public static class MultiDropDownListForExtensions
     {
-        public static MvcHtmlString MultiDropDownListFor<TModel, TProperty>(this HtmlHelper<TModel> helper, Expression<Func<TModel, TProperty>> property) where TProperty : MultiSelectList
+        public static MvcHtmlString MultiDropDownListFor<TModel, TProperty>(
+            this HtmlHelper<TModel> helper, 
+            Expression<Func<TModel, TProperty>> property,
+            string allText = null) where TProperty : MultiSelectList
         {
             var list = property.Compile().Invoke(helper.ViewData.Model);
             var htmlFieldName = ExpressionHelper.GetExpressionText(property);
@@ -17,7 +20,8 @@ namespace NSnippets.GroupedMultiSelection.Infrastructure
             {
                 Id = templateInfo.GetFullHtmlFieldId(htmlFieldName),
                 Name = templateInfo.GetFullHtmlFieldName(htmlFieldName),
-                List = list
+                List = list,
+                AllText = allText
             });
         }
     }

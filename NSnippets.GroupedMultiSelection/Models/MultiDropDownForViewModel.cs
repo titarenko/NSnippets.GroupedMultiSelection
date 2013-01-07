@@ -9,5 +9,7 @@ namespace NSnippets.GroupedMultiSelection.Models
         public string Name { get; set; }
 
         public MultiSelectList List { get; set; }
+
+        public string AllText { get; set; }
     }
 }

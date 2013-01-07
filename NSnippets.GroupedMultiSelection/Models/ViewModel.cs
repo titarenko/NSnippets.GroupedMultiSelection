@@ -16,5 +16,7 @@ namespace NSnippets.GroupedMultiSelection.Models
             Strings = new MultiSelection<string>();
             Days = new MultiSelection<DayOfWeek>();
         }
+
+        public bool ContainsUserInput { get; set; }
     }
 }

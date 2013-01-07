@@ -15,14 +15,16 @@
 <h3>Current Selection</h3>
 @using (Html.BeginForm())
 {
+    Model.ContainsUserInput = true;
+    @Html.HiddenFor(x => x.ContainsUserInput)
     <div class="row form-inline">
         <div class="span4">
             @Html.LabelFor(x => x.Ints)
-            @Html.MultiDropDownListFor(x => x.Ints)
+            @Html.MultiDropDownListFor(x => x.Ints, "All Ints")
         </div>
         <div class="span4">
             @Html.LabelFor(x => x.Strings)
-            @Html.MultiDropDownListFor(x => x.Strings)
+            @Html.MultiDropDownListFor(x => x.Strings, "All Strings")
         </div>
         <div class="span4">
             @Html.LabelFor(x => x.Days)

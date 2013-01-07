@@ -25,7 +25,7 @@ namespace NSnippets.GroupedMultiSelection.Infrastructure
                 throw new ApplicationException("Can't find appropriate ctor.");
             }
 
-            return ctor.Invoke(new object[] {groups});
+            return ctor.Invoke(new object[] {groups.Where(x => x != "All").ToList()});
         }
     }
 }

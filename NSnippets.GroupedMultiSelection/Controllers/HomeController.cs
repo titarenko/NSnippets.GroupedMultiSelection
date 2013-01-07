@@ -11,7 +11,7 @@ namespace NSnippets.GroupedMultiSelection.Controllers
             return View(new ViewModel
             {
                 Ints = new MultiSelection<int>(
-                    viewModel.Ints.Selected,
+                    !viewModel.ContainsUserInput,
                     new MultiSelectionItem<int>("From 1 to 3", 1, 2, 3),
                     new MultiSelectionItem<int>("From 5 to 8", 5, 6, 7, 8),
                     new MultiSelectionItem<int>("Just 9", 9)),

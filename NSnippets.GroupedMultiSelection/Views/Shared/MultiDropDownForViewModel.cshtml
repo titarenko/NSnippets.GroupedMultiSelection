@@ -6,6 +6,14 @@
         <b class="caret pull-right"></b>
     </button>
     <ul class="dropdown-menu" role="menu">
+        @if (Model.AllText != null)
+        {
+            var id = Guid.NewGuid().ToString();
+            <li>
+                <input class="all" type="checkbox" id="@id" name="@Model.Name" value="All" @if (Model.List.All(x => x.Selected)) { @Html.Raw("checked") }/>
+                <label for="@id">@Model.AllText</label>
+            </li>
+        }
         @for (var index = 0; index < Model.List.Count(); index++)
         {
             var item = Model.List.Skip(index).First();
